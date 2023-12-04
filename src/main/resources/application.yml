@@ -1,0 +1,17 @@
+server:
+    port: 8080
+
+# HBase Configuration
+#hbase:
+#    zookeeper:
+#        quorum: "node1:2181,node2:2181,node3:2181"  # Add all ZooKeeper nodes in your HBase cluster
+##    client:
+##        username: hbase-username
+##        password: hbase-password
+
+# Redis Configuration
+spring:
+    redis:
+        host: localhost
+        port: 6379
+        database: 1
