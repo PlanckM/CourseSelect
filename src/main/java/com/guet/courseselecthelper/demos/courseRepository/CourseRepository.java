@@ -1,6 +1,6 @@
 package com.guet.courseselecthelper.demos.courseRepository;
 
-import com.guet.courseselecthelper.demos.entity.vo.CourseInfoAndTeachingInfo;
+import com.guet.courseselecthelper.demos.entity.Course;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.*;
@@ -38,9 +38,9 @@ public class CourseRepository {
         return stringRedisTemplate.opsForHash().entries(key);
     }
     // 获取所有课程信息
-    public List<CourseInfoAndTeachingInfo> getAllCourses() {
+    public List<Course> getAllCourses() {
         Set<Object> allCourseIds = new HashSet<>(stringRedisTemplate.opsForSet().members("AllCourses"));
-        List<CourseInfoAndTeachingInfo> allCourses = new ArrayList<>();
+        List<Course> allCourses = new ArrayList<>();
 
         for (Object courseId : allCourseIds) {
             String courseKey = "CInfo:" + courseId;
@@ -49,7 +49,7 @@ public class CourseRepository {
             Map<Object, Object> courseInfo = stringRedisTemplate.opsForHash().entries(courseKey);
             Map<Object, Object> teachingInfo = stringRedisTemplate.opsForHash().entries(teachingKey);
 
-            CourseInfoAndTeachingInfo result = new CourseInfoAndTeachingInfo();
+            Course result = new Course();
             result.setCourseInfo(courseInfo);
             result.setTeachingInfo(teachingInfo);
             result.setCourseId((String) courseId);

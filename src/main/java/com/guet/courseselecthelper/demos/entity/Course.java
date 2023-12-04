@@ -1,10 +1,11 @@
-package com.guet.courseselecthelper.demos.entity.vo;
+package com.guet.courseselecthelper.demos.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Map;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
