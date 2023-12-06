@@ -1,7 +1,7 @@
-package com.guet.courseselecthelper.demos.service.Impl;
+package com.guet.courseselecthelper.service.Impl;
 
-import com.guet.courseselecthelper.demos.entity.Student;
-import com.guet.courseselecthelper.demos.service.StudentService;
+import com.guet.courseselecthelper.entity.Student;
+import com.guet.courseselecthelper.service.StudentService;
 import com.guet.courseselecthelper.mapper.StudentIdMapper;
 import com.guet.courseselecthelper.mapper.StudentMapper;
 import com.spring4all.spring.boot.starter.hbase.api.HbaseTemplate;

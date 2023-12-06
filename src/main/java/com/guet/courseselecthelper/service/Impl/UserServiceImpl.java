@@ -1,9 +1,9 @@
-package com.guet.courseselecthelper.demos.service.Impl;
+package com.guet.courseselecthelper.service.Impl;
 
 import com.guet.courseselecthelper.common.util.JwtUtils;
-import com.guet.courseselecthelper.demos.entity.User;
-import com.guet.courseselecthelper.demos.service.StudentService;
-import com.guet.courseselecthelper.demos.service.UserService;
+import com.guet.courseselecthelper.entity.User;
+import com.guet.courseselecthelper.service.StudentService;
+import com.guet.courseselecthelper.service.UserService;
 import com.guet.courseselecthelper.mapper.UserMapper;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;

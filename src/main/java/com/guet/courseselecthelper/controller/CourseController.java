@@ -1,9 +1,9 @@
-package com.guet.courseselecthelper.demos.controller;
+package com.guet.courseselecthelper.controller;
 
 
 import com.guet.courseselecthelper.common.entity.Result;
 
-import com.guet.courseselecthelper.demos.service.CourseService;
+import com.guet.courseselecthelper.service.CourseService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 

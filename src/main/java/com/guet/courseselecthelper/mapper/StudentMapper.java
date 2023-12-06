@@ -1,7 +1,6 @@
 package com.guet.courseselecthelper.mapper;
 
-import com.google.common.primitives.Bytes;
-import com.guet.courseselecthelper.demos.entity.Student;
+import com.guet.courseselecthelper.entity.Student;
 import com.spring4all.spring.boot.starter.hbase.api.RowMapper;
 import org.apache.hadoop.hbase.client.Result;
 

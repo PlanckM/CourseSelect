@@ -1,6 +1,6 @@
-package com.guet.courseselecthelper.demos.service;
+package com.guet.courseselecthelper.service;
 
-import com.guet.courseselecthelper.demos.entity.Student;
+import com.guet.courseselecthelper.entity.Student;
 
 public interface StudentService {
     void insertStudentInfo();

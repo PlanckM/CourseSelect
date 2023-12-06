@@ -1,9 +1,9 @@
-package com.guet.courseselecthelper.demos.controller;
+package com.guet.courseselecthelper.controller;
 
 import com.guet.courseselecthelper.common.entity.Result;
-import com.guet.courseselecthelper.demos.entity.Student;
-import com.guet.courseselecthelper.demos.service.StudentService;
-import com.guet.courseselecthelper.demos.service.UserService;
+import com.guet.courseselecthelper.entity.Student;
+import com.guet.courseselecthelper.service.StudentService;
+import com.guet.courseselecthelper.service.UserService;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

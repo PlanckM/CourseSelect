@@ -1,6 +1,6 @@
-package com.guet.courseselecthelper.demos.Repository;
+package com.guet.courseselecthelper.repository;
 
-import com.guet.courseselecthelper.demos.entity.Course;
+import com.guet.courseselecthelper.entity.Course;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.*;

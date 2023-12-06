@@ -1,7 +1,7 @@
-package com.guet.courseselecthelper.demos.service;
+package com.guet.courseselecthelper.service;
 
 
-import com.guet.courseselecthelper.demos.entity.Course;
+import com.guet.courseselecthelper.entity.Course;
 
 
 import java.util.List;

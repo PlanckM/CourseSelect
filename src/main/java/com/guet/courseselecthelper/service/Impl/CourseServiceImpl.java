@@ -1,8 +1,8 @@
-package com.guet.courseselecthelper.demos.service.Impl;
+package com.guet.courseselecthelper.service.Impl;
 
-import com.guet.courseselecthelper.demos.Repository.CourseRepository;
-import com.guet.courseselecthelper.demos.entity.Course;
-import com.guet.courseselecthelper.demos.service.CourseService;
+import com.guet.courseselecthelper.repository.CourseRepository;
+import com.guet.courseselecthelper.entity.Course;
+import com.guet.courseselecthelper.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

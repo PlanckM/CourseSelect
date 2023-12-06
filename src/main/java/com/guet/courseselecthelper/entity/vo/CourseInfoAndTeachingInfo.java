@@ -1,4 +1,4 @@
-package com.guet.courseselecthelper.demos.entity.vo;
+package com.guet.courseselecthelper.entity.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

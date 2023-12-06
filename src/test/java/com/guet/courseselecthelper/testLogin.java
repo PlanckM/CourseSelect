@@ -1,6 +1,6 @@
 package com.guet.courseselecthelper;
 
-import com.guet.courseselecthelper.demos.service.StudentService;
+import com.guet.courseselecthelper.service.StudentService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
