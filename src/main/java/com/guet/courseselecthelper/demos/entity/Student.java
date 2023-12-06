@@ -4,16 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Student {
+    private SInfo sInfo;
+    private Studies studies;
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     public static class SInfo {
-        private String studentID;
+        private String studentId;
         private String sName;
         private String sGender;
-        private Integer sAge;
+        private String sAge;
     }
 
     @Data
@@ -21,6 +25,6 @@ public class Student {
     @NoArgsConstructor
     public static class Studies {
         private String sDepartment;
-        private String smajor;
+        private String sMajor;
     }
 }

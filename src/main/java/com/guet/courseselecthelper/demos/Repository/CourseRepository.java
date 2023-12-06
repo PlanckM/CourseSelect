@@ -1,4 +1,4 @@
-package com.guet.courseselecthelper.demos.courseRepository;
+package com.guet.courseselecthelper.demos.Repository;
 
 import com.guet.courseselecthelper.demos.entity.Course;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -39,9 +39,9 @@ public class CourseRepository {
     }
     // 获取所有课程信息
     public List<Course> getAllCourses() {
-        Set<Object> allCourseIds = new HashSet<>(stringRedisTemplate.opsForSet().members("AllCourses"));
+        Set<Object> allCourseIds = new HashSet<>(Objects.requireNonNull(stringRedisTemplate.opsForSet().members("AllCourses")));
         List<Course> allCourses = new ArrayList<>();
-
+        // 遍历所有课程ID，获取每个课程的信息
         for (Object courseId : allCourseIds) {
             String courseKey = "CInfo:" + courseId;
             String teachingKey = "Teaching:" + courseId;

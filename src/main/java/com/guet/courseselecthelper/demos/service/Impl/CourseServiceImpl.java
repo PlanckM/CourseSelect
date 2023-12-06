@@ -1,13 +1,11 @@
 package com.guet.courseselecthelper.demos.service.Impl;
 
-import com.guet.courseselecthelper.demos.courseRepository.CourseRepository;
+import com.guet.courseselecthelper.demos.Repository.CourseRepository;
 import com.guet.courseselecthelper.demos.entity.Course;
 import com.guet.courseselecthelper.demos.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.*;
 
 @Service

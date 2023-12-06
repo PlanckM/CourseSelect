@@ -5,9 +5,7 @@ server:
 #hbase:
 #    zookeeper:
 #        quorum: "node1:2181,node2:2181,node3:2181"  # Add all ZooKeeper nodes in your HBase cluster
-##    client:
-##        username: hbase-username
-##        password: hbase-password
+#
 
 # Redis Configuration
 spring:
@@ -18,3 +16,16 @@ spring:
     datasource:
         url: jdbc:mysql://localhost:3306/bigdatasc
         username: root
+        password: 180229gxk.
+    data:
+        hbase:
+            quorum: "node1:2181,node2:2181,node3:2181"
+            rootDir: hdfs://node1:9000/hbase
+            nodeParent: /hbase
+
+mybatis:
+    mapper-locations: /mapper/*.xml
+    type-aliases-package: com.guet.courseselecthelper.demos.entity
+    configuration:
+        map-underscore-to-camel-case: true
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
