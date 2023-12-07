@@ -45,4 +45,9 @@ public class CourseController {
         return Result.success(courseService.getAllCourses());
     }
 
+    @PostMapping("/selection")
+    public Result insertCourseSelectionRecords(@RequestBody Map<String, Integer> selectCourseRequest){
+        courseService.insertCourseSelectionRecords(selectCourseRequest.get("courseId"), selectCourseRequest.get("studentId"));
+        return Result.success();
+    }
 }

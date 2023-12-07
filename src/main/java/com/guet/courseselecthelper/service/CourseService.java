@@ -12,4 +12,6 @@ public interface CourseService {
     Course getCourseAndTeachingInfo(String courseId);
     // 获取课程列表
     List<Course> getAllCourses();
+
+    void insertCourseSelectionRecords(Integer courseId, Integer studentId);
 }
