@@ -30,13 +30,17 @@ public class JwtUtils {
                 .getBody();
         return claims.getSubject();
     }
-
-    public static boolean validateToken(String token) {
-        try {
-            Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+    /**
+     * 解析令牌
+     *
+     * @param jwt JWT令牌
+     * @return JWT第二部分负载 payload中存储的内容
+     */
+    public static Claims parseJWT(String jwt) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(SECRET_KEY)
+                .parseClaimsJws(jwt)
+                .getBody();
+        return claims;
     }
 }

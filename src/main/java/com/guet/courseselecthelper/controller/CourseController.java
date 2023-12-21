@@ -23,7 +23,6 @@ public class CourseController {
     @Resource
     private CourseService courseService;
 
-
     @PostMapping("/save")
     public Result saveCourseAndTeachingInfo(@RequestBody Map<String, Object> request) {
         String courseId = (String) request.get("courseId");
@@ -48,6 +47,19 @@ public class CourseController {
     @PostMapping("/selection")
     public Result insertCourseSelectionRecords(@RequestBody Map<String, Integer> selectCourseRequest){
         courseService.insertCourseSelectionRecords(selectCourseRequest.get("courseId"), selectCourseRequest.get("studentId"));
+        return Result.success();
+    }
+
+    @PostMapping("/selected")
+    public Result SelectedCourses(@RequestBody Map<String, Integer> studentIdReq){
+        System.out.println(studentIdReq.get("studentId"));
+        return Result.success(courseService.SelectedCourses(studentIdReq.get("studentId")));
+    }
+
+    @DeleteMapping("/delete")
+    public Result deleteCourse(@RequestBody Map<String, Integer> deleteCourseRequest){
+        System.out.println(deleteCourseRequest.get("courseId"));
+        courseService.deleteCourse(deleteCourseRequest.get("courseId"), deleteCourseRequest.get("studentId"));
         return Result.success();
     }
 }

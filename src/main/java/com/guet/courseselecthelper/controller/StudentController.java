@@ -1,15 +1,11 @@
 package com.guet.courseselecthelper.controller;
-
 import com.guet.courseselecthelper.common.entity.Result;
+import org.springframework.http.HttpEntity;
+
 import com.guet.courseselecthelper.entity.Student;
 import com.guet.courseselecthelper.service.StudentService;
-import com.guet.courseselecthelper.service.UserService;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-
 import javax.annotation.Resource;
 import java.util.Map;
 
@@ -19,27 +15,24 @@ public class StudentController {
 
     @Resource
     private StudentService studentService;
-    @Resource
-    private UserService userService;
-    @Resource
-    private StringRedisTemplate stringRedisTemplate;
 
     @GetMapping("{tableName}/{rowKey}")
-    public Student getStudentById(@PathVariable String tableName, @PathVariable String rowKey){
+    public Student getStudentById(@PathVariable String tableName, @PathVariable String rowKey) {
         return studentService.findById(tableName, rowKey);
     }
 
-
-    @PostMapping("/login")
-    public ResponseEntity<Result> login(@RequestBody Map<String, String> loginRequest){
-        String account = loginRequest.get("account");
-        String password = loginRequest.get("password");
-        // 在UserService中验证用户凭证
-        if (userService.authenticateUser(account, password)) {
-            String token = stringRedisTemplate.opsForValue().get("JWT_" + account);
-            return ResponseEntity.ok(Result.success(token));
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Result.error("Invalid credentials"));
+    @GetMapping("/list")
+    public Result getAllStudent(){
+        return Result.success(studentService.getAllStudent());
+    }
+    @PostMapping("/insert")
+    public Result insertStudentInfo(@RequestBody Student student, @RequestParam String tableName) {
+        try {
+            studentService.insertStudentInfo(tableName, student);
+            return Result.success();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error("insert error");
         }
     }
 }

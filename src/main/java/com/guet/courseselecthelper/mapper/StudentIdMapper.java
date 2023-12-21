@@ -6,7 +6,7 @@ import org.apache.hadoop.hbase.client.Result;
  */
 public class StudentIdMapper implements RowMapper<String> {
     private static final byte[] SINFO_FAMILY = "SInfo".getBytes();
-    private static final byte[] STUDENT_ID = "studentId".getBytes();
+    private static final byte[] STUDENT_ID = "StudentID".getBytes();
 
     @Override
     public String mapRow(Result result, int i) throws Exception {

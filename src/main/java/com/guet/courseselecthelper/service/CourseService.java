@@ -14,4 +14,8 @@ public interface CourseService {
     List<Course> getAllCourses();
 
     void insertCourseSelectionRecords(Integer courseId, Integer studentId);
+
+    List<Course> SelectedCourses(Integer studentId);
+
+    void deleteCourse(Integer courseId, Integer studentId);
 }

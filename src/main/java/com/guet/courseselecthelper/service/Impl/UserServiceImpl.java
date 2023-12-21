@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
     public User findByAccount(String account) {
+        System.out.println(account);
         // 判断hbase中是否有这个账户
         if (studentService.findByAccount("student", account) != null){
             // 从mysql获取对应账户的密码
@@ -35,10 +36,10 @@ public class UserServiceImpl implements UserService {
 
     }
     @Override
-    public boolean authenticateUser(String account, String password) {
+    public boolean authenticateUser(String account, String password, String role) {
         User user = findByAccount(account);
         if(user != null && user.getPassword() != null && user.getPassword().equals(password)){
-            String token = JwtUtils.generateToken(user.getAccount());
+            String token = JwtUtils.generateToken(role);
             stringRedisTemplate.opsForValue().set("JWT_" + account, token, 6, TimeUnit.HOURS);
             return true;
         }

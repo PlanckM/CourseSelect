@@ -6,4 +6,10 @@
     <insert id="insertCourseSelectionRecords">
         insert into sc(student_id, course_id) value (#{studentId}, #{courseId});
     </insert>
+    <delete id="deleteCourse">
+        delete from sc where student_id = #{studentId} and course_id = #{courseId};
+    </delete>
+    <select id="SelectedCourses" resultType="string">
+        select course_id from sc where student_id = #{studentId};
+    </select>
 </mapper>
